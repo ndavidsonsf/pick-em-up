@@ -8,6 +8,8 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :state, null: false, length: 64
       t.string :zip_code, null: false, length: 64
 
+      t.references :user, null: false
+
       t.timestamps null: false
     end
   end

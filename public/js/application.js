@@ -19,11 +19,12 @@ function flightDetails() {
     // console.log(this);
     // console.log($("#ident_text").val());
     var clickedFlightStatus = $(this);
+    // $("#ident_text").val()
 
     $.ajax ({
-      url: fxml_url + 'FlightInfo',
+      url: fxml_url + 'FlightInfoEx',
       method: 'GET',
-      data: { 'ident': $("#ident_text").val(), 'howMany': 5, 'offset': 0 },
+      data: { "ident": $("#ident_text").val(), howMany: 5, offset: 0 },
       error: function(data, text) { alert('Failed to fetch flight: ' + data); },
       dataType: 'jsonp',
       jsonp: 'jsonp_callback',
@@ -32,8 +33,8 @@ function flightDetails() {
 
     .done(function(response) {
       console.log(response);
-      for (flight of response.FlightInfoResult.flights) {
-        if (((Math.floor(Date.now() / 1000)) > flight.actualdeparturetime) && (flight.actualarrivaltime === 0) && (flight.actualdeparturetime > 0)) {
+      for (flight of response.FlightInfoExResult.flights) {
+        if ((Math.floor(Date.now() / 1000)) > (flight.actualdeparturetime) && (flight.actualarrivaltime === 0)) {
           clickedFlightStatus.parent().parent().find("#flight-status").html(flight.ident + " flight from " + flight.originCity + " to " + flight.destinationCity + "<br>" + "Scheduled to arrive at " + flight.destinationName + " in " + timeConverter(flight.estimatedarrivaltime));
         }
       }
@@ -68,7 +69,7 @@ function showLogin() {
       // console.log(response);
       $("#main-block").hide();
       // $(".jumbotron").toggle();
-      $(".jumbotron").append(response);
+      $(".jumbotron").show(response);
     })
   })
 }
@@ -88,7 +89,10 @@ function showNewUser() {
     .done(function(response) {
       console.log(response);
       $("#main-block").hide();
-      $(".jumbotron").append(response);
+      $(".jumbotron").show(response);
     })
   })
 }
+
+// if (((Math.floor(Date.now() / 1000)) > flight.actualdeparturetime) && (flight.actualarrivaltime === 0) && (flight.actualdeparturetime > 0)) {
+//           clickedFlightStatus.parent().parent().find("#flight-status").html(flight.ident + " flight from " + flight.originCity + " to " + flight.destinationCity + "<br>" + "Scheduled to arrive at " + flight.destinationName + " in " + timeConverter(flight.estimatedarrivaltime));

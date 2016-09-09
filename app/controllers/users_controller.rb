@@ -21,5 +21,6 @@ end
 
 get '/users/:id' do
   @user = User.find(params[:id])
+  @itineraries = @user.itineraries
   erb :'users/show'
 end

@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="container">
+    <br>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3>Itinerary Details</h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <ul class="list-group">
+        <li class="list-group-item">Label: <%= @itinerary.label %></li>
+        <li class="list-group-item">Pick up date: <%= @itinerary.date.strftime("%D") %></li>
+        <li class="list-group-item">Airline: <%= @itinerary.airline %></li>
+        <li class="list-group-item">Flight No: <%= @itinerary.flight_number %></li>
+        <li class="list-group-item">Origin airport: <%= @itinerary.origin %></li>
+        <li class="list-group-item">Destination airport: <%= @itinerary.destination %></li>
+
+        <li class="list-group-item" ><%= @itinerary.created_at.localtime.strftime("Created on: %a, %b %d, %Y at %I:%M:%S %P") %>.</li>
+        <li class="list-group-item" ><%= @itinerary.updated_at.localtime.strftime("Updated on: %a, %b %d, %Y at %I:%M:%S %P") %>.</li>
+      </ul>
+    </div>
+  </div>
+</div>

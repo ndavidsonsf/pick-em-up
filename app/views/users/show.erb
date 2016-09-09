@@ -22,8 +22,27 @@
     </div>
     <div class="panel-body">
       <ul class="list-group">
-        <li class="list-group-item" align="right"><a href="/users/<%= @user.id %>/items/new">+ add an auction item</a></li>
-
+        <li class="list-group-item" align="right"><a href="/users/<%= current_user.id %>/itineraries/new">+ add an itinerary</a></li>
+        <% @itineraries.order("created_at DESC").each do |itinerary| %>
+          <li class="list-group-item"><a href="/users/<%= current_user.id %>/itineraries/<%= itinerary.id %>"><%= itinerary.label %></a>
+            <br>
+            <form id="flight-status-form">
+            <input type="hidden"  id="ident_text" value="<%= itinerary.airline  %><%= itinerary.flight_number %>">
+            </form>
+              <button id="flight_status" type="button" class="btn btn-primary">Check flight status</button>
+            <div id="flight-status">
+            </div>
+            <div align=right>
+              <a href="/users/<%= current_user.id %>/itineraries/<%= itinerary.id %>/edit">edit this itinerary</a>
+            </div>
+            <div align=right>
+              <form action="/users/<%= current_user.id %>/itineraries/<%= itinerary.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <a><input id="delete_itinerary" type="submit" value="delete this itinerary"></a>
+              </form>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>

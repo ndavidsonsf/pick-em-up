@@ -1,0 +1,39 @@
+<div class="jumbotron">
+  <div class="container">
+  <br>
+    <form class="form-signingup" action="/users/<%= current_user.id %>/itineraries" method="post">
+        <% if @errors %>
+          <div class="alert alert-danger">
+          <% @errors.each do |error| %>
+            <strong><%= error %></strong>
+          <% end %>
+          </div>
+        <% end %>
+
+      <h2 class="form-itinerary-heading">New Itinerary Details</h2>
+      <input type="text" id="inputLabel" class="form-control" placeholder="label" name="itinerary[label]" required autofocus>
+      <div class="form-group">
+        <label for="inputDate">Date of Arrival:</label>
+        <input type="date" id="inputDate" class="form-control" placeholder="Date" name="itinerary[date]" required autofocus>
+      </div>
+      <div class="form-group">
+      <label for="sel1">Airline (select one):</label>
+      <select class="form-control" id="sel1" name="itinerary[airline]">
+        <option></option>
+        <option value="ASA">Alaska Airlines</option>
+        <option value="AAL">American Airlines</option>
+        <option value="DAL">Delta Airlines</option>
+        <option value="JBU">JetBlue Airways</option>
+        <option value="SWA">Southwest Airlines</option>
+        <option value="UAL">United Airlines</option>
+        <option value="VRD">Virgin America</option>
+      </select>
+      </div>
+      <input type="text" id="inputFlightNumber" class="form-control" placeholder="Flight number" name="itinerary[flight_number]" required autofocus>
+      <input type="text" id="inputOrigin" class="form-control" placeholder="Origin" name="itinerary[origin]" required autofocus>
+      <input type="text" id="inputDestination" class="form-control" placeholder="Destination" name="itinerary[destination]" required autofocus>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Add itinerary</button>
+    </form>
+
+  </div>
+</div>

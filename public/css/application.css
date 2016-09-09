@@ -17,3 +17,8 @@ html {
 #logout:hover {
   color: #fff;
 }
+
+#delete_itinerary {
+  background: none;
+  border: none;
+}

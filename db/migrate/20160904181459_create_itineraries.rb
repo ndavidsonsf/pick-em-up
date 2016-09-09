@@ -8,7 +8,6 @@ class CreateItineraries < ActiveRecord::Migration
       t.string :origin, null: false
       t.string :destination, null: false
 
-      t.references :address, null: false
       t.references :user, null: false
 
       t.timestamps null: false

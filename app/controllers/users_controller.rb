@@ -1,6 +1,9 @@
 get '/users/new' do
-  @user = User.new
-  erb :'users/new'
+  if request.xhr?
+    erb :'/users/_signupform', layout: false
+  else
+    erb :"/sessions/new"
+  end
 end
 
 post '/users' do

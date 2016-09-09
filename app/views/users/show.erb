@@ -28,9 +28,10 @@
             <br>
             <form id="flight-status-form">
             <input type="hidden"  id="ident_text" value="<%= itinerary.airline  %><%= itinerary.flight_number %>">
-            </form>
               <button id="flight_status" type="button" class="btn btn-primary">Check flight status</button>
-            <div id="flight-status">
+            </form>
+            <div id="flight-status" class="text-center">
+              <br><br>
             </div>
             <div align=right>
               <a href="/users/<%= current_user.id %>/itineraries/<%= itinerary.id %>/edit">edit this itinerary</a>

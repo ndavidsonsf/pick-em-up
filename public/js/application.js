@@ -2,7 +2,7 @@
 // var userName = ENV['USERNAME']
 // var fxml_url = "http://" + userName + ":" + apiKey + "@flightxml.flightaware.com/json/FlightXML2/";
 
-var fxml_url = "http://NicholasDavidson:750167e2faf07dfbbb2f62ae463fe7651f8f9cf3@flightxml.flightaware.com/json/FlightXML2/";
+
 $(document).ready(function() {
   flightDetails();
   showLogin();

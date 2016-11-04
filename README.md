@@ -1,3 +1,8 @@
+# Pick 'em Up!
+![pickemup]
+
+
+
 ### Quickstart
 
 1.  `bundle install`

@@ -1,5 +1,5 @@
 # Pick 'em Up!
-<p align="center">![pickemup](public/images/pickemuplogo.jpg)</p>
+<p align="center">![pickemup](./public/images/pickemuplogo.jpg)</p>
 > Pick 'em Up! is a mobile first application that provides real-time flight information for the poeple you need to pick up at the airport.  It was built in one day as a Passion Project at Dev Bootcamp.
 
 ## Getting Started

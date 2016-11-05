@@ -18,6 +18,8 @@ These instructions will get you a copy of the project up and running on your loc
 6. Open your web browser
 7. Navigate to `localhost:9393` to begin using the application
 
+![pickemup](/public/images/readme_gif.gif)
+
 ### Deploying
 Please contact <a href="mailto:nick@nickdavidson.io">Nick Davidson</a> for further deployment instructions.
 
